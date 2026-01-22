@@ -3,13 +3,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
-
 import allure
+from configutation.ConfigProvider import ConfigProvider
 
 class AuthPage:
 
     def __init__(self, driver: WebDriver) -> None:
-        self.__url = "https://www.labirint.ru/"
+        url = ConfigProvider().get("ui", "base_url")
+        # self.__url = "https://www.labirint.ru/"
+        self.__url = url
         self.__driver = driver
 
     @allure.step("Открыть браузер на странице https://www.labirint.ru/")

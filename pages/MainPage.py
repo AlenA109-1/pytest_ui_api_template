@@ -11,10 +11,8 @@ class MainPage:
         self.__url = "https://www.labirint.ru/"
         self.__driver = driver
 
-    # def search_by_namebook(self):
+    # def anything_ui(self): - добавить тесты по ui
 
-    # def search_by_author(self):
-
-    # def search_null(self):
+                     
 
     
