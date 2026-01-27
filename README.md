@@ -12,10 +12,12 @@
 ### Стек:
 - pytest
 - selenium
+- webdriver manager
 - requests
 - _sqlalchemy_
 - allure
 - config
+- json
 
 ### Струткура:
 - ./test - тесты
@@ -30,10 +32,7 @@
 ### Полезные ссылки
 - [Подсказка по markdown](https://www.markdownguide.org/basic-syntax/)
 - [Генератор файла .gitignore](https://www.toptal.com/developers/gitignore)
+- [Документация по pip freeze](https://pip.pypa.io/en/stable/cli/pip_freeze/)
 
 ### Библиотеки (!)
-- pip install pytest
-- pip install selenium
-- pip install webdriver-manager
-- pip install allure-pytest
-- pip install requests
+- pip install > -r requirements.txt
