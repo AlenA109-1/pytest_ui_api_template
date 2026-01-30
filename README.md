@@ -34,5 +34,10 @@
 - [Генератор файла .gitignore](https://www.toptal.com/developers/gitignore)
 - [Документация по pip freeze](https://pip.pypa.io/en/stable/cli/pip_freeze/)
 
+### Ссылка на проект по ручному тестированию
+- [Тест-план](https://arkhipovaam109-1.yonote.ru/share/1706e36b-7c98-487a-b090-01a32c04c629)
+- [Отчет о тестировании](https://arkhipovaam109-1.yonote.ru/share/b5a80e1c-56fe-4e80-934e-05162cdf0300)
+
+
 ### Библиотеки (!)
 - pip install > -r requirements.txt
