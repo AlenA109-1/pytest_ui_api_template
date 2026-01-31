@@ -6,9 +6,9 @@ from api.SearchApi import SearchApi
 from configuration.ConfigProvider import ConfigProvider
 from configuration.DataProvider import DataProvider
 
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
 
@@ -19,14 +19,10 @@ def browser():
         browser_name = ConfigProvider().get("ui", "browser_name")
 
         if browser_name == 'chrome':
-            browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         else:
-            browser = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
-
-
-        browser.implicitly_wait(timeout_iw)
-        # browser = webdriver.Chrome()
-        # browser.implicitly_wait(4) заменено ConfigProvider, значение (4) указано в mytest_config.ini, передано в браузер
+            browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+      
         browser.maximize_window()
         yield browser
 
