@@ -29,9 +29,9 @@ class MainPage:
     @allure.step("Нажать кнопку /""В корзину/"" на первой карточке товара")
     def add_book_to_cart(self):
         """Находит первую книгу, нажимает кнопку добавления в корзину"""
-        WebDriverWait(self.__driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a.product-card__link-mobile")))
+        WebDriverWait(self.__driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.product-card")))
         # Находим первую книгу/карточку товара
-        first_book = self.__driver.find_element(By.CSS_SELECTOR, ".product-card__link-mobile:first-child")
+        first_book = self.__driver.find_element(By.CSS_SELECTOR, "div.product-card:first-child")
         btn_to_cart = first_book.find_element(By.CSS_SELECTOR, "a.btn-tocart")
         btn_to_cart.click()
 
@@ -51,8 +51,8 @@ class MainPage:
     @allure.step("Отметить книгу отложенной")
     def put_into_favorites(self) -> None:
         """Добавляет первую книгу в Отложено"""
-        WebDriverWait(self.__driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a.product-card__link-mobile")))
-        first_book = self.__driver.find_element(By.CSS_SELECTOR, ".product-card__link-mobile:first-child")
+        WebDriverWait(self.__driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.product-card")))
+        first_book = self.__driver.find_element(By.CSS_SELECTOR, "div.product-card")
         fav_btn = first_book.find_element(By.CSS_SELECTOR, "a.btn-like")
         fav_btn.click()
 
