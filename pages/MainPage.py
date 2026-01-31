@@ -29,9 +29,9 @@ class MainPage:
     @allure.step("Нажать кнопку /""В корзину/"" на первой карточке товара")
     def add_book_to_cart(self):
         """Находит первую книгу, нажимает кнопку добавления в корзину"""
-        WebDriverWait(self.__driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.product-card")))
+        WebDriverWait(self.__driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.gtm-watched")))
         # Находим первую книгу/карточку товара
-        first_book = self.__driver.find_element(By.CSS_SELECTOR, "div.product-card:first-child")
+        first_book = self.__driver.find_element(By.CSS_SELECTOR, "div.gtm-watched:first-child")
         btn_to_cart = first_book.find_element(By.CSS_SELECTOR, "a.btn-tocart")
         btn_to_cart.click()
 
@@ -65,7 +65,7 @@ class MainPage:
     def is_book_in_favorites(self, namebook) -> bool:
         """Проверяет, есть ли книга с указанным названием в отложенных"""
         try:
-            fav_book = WebDriverWait(self.__driver, 10).until(EC.presence_of_element_located((By.XPATH, f"//div[contains(@class, 'product-padding product-padding-cart')]//a[contains(text(), '{namebook}')]")))
+            fav_book = WebDriverWait(self.__driver, 10).until(EC.presence_of_element_located((By.XPATH, f"//div[contains(@class, 'product-title')]//a[contains(text(), '{namebook}')]")))
             return fav_book.is_displayed()
         except:
             return False

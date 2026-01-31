@@ -5,7 +5,6 @@ import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-
 @pytest.mark.ui
 def test_auth(browser, test_data: dict):  #тест работает раз 10, потом появляется капча
     phone = test_data.get("phone")
