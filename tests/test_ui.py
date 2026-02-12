@@ -25,7 +25,7 @@ def test_search_book(browser):
     main_page.go()
     main_page.search_book(namebook)
 
-    result = WebDriverWait(browser, 10).until(lambda d: d.find_elements(By.CLASS_NAME, "product-card__link-mobile"))
+    result = main_page.get_search_results()
       
     with allure.step("Убедиться, что найдена хотя бы одна книга - карточка товара"):
         assert len(result) > 0, "Не найдено ни одной книги или товара"

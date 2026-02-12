@@ -69,3 +69,7 @@ class MainPage:
             return fav_book.is_displayed()
         except:
             return False
+
+    def get_search_results(self):
+        return WebDriverWait(self.__driver, 10).until(
+            lambda d: d.find_elements(By.CLASS_NAME, "product-card__link-mobile"))
